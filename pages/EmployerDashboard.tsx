@@ -10,7 +10,6 @@ import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { useToast } from '../components/ui/Toast';
 import { Link, useLocation } from 'react-router-dom';
-import { generateJobDescription } from '../services/aiService';
 
 // --- TYPES ---
 interface CompanyProfile {
@@ -228,7 +227,7 @@ export const EmployerDashboard: React.FC = () => {
       return;
     }
     setIsGeneratingAI(true);
-    const desc = await generateJobDescription(newJobTitle, newJobKeywords || 'chuyên nghiệp, chi tiết, đầy đủ');
+    const desc = ""
     setNewJobDesc(desc);
     setIsGeneratingAI(false);
     addToast('Đã tạo mô tả công việc bằng AI!', 'success');
